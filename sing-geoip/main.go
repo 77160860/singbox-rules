@@ -269,7 +269,18 @@ func release(source string, destination string, output string, ruleSetOutput str
 }
 
 func setActionOutput(name string, content string) {
-	os.Stdout.WriteString("::set-output name=" + name + "::" + content + "\n")
+	outputPath := os.Getenv("GITHUB_OUTPUT")
+	if outputPath == "" {
+		os.Stdout.WriteString(name + "=" + content + "\n")
+		return
+	}
+	f, err := os.OpenFile(outputPath, os.O_APPEND|os.O_WRONLY, 0o644)
+	if err != nil {
+		os.Stdout.WriteString(name + "=" + content + "\n")
+		return
+	}
+	defer f.Close()
+	_, _ = f.WriteString(name + "=" + content + "\n")
 }
 
 func main() {

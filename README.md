@@ -13,7 +13,7 @@ https://github.com/77160860/singbox-rules/releases/latest/download/geosite.db
 
 ---
 
-较新版本 sing-box 使用的 srs 文件在以下分支中:
+较新版本 sing-box 使用的 srs或json 文件在以下分支中:
 
 https://github.com/77160860/singbox-rules/tree/geoip
 

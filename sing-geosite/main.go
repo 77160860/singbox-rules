@@ -227,7 +227,7 @@ func generate(release *github.RepositoryRelease, output string, cnOutput string,
 				DefaultOptions: headlessRule,
 			},
 		}
-		srsPath, _ := filepath.Abs(filepath.Join(ruleSetOutput, "geosite-"+code+".srs"))
+		srsPath, _ := filepath.Abs(filepath.Join(ruleSetOutput, code+".srs"))
 		os.Stderr.WriteString("write " + srsPath + "\n")
 		outputRuleSet, err := os.Create(srsPath)
 		if err != nil {
@@ -240,7 +240,7 @@ func generate(release *github.RepositoryRelease, output string, cnOutput string,
 		}
 		outputRuleSet.Close()
 
-		srsPath, _ = filepath.Abs(filepath.Join(ruleSetOutput, "geosite-"+code+".json"))
+		srsPath, _ = filepath.Abs(filepath.Join(ruleSetOutput, code+".json"))
 		os.Stderr.WriteString("write " + srsPath + "\n")
 		outputRuleSet, err = os.Create(srsPath)
 		if err != nil {

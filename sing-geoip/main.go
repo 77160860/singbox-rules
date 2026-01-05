@@ -228,7 +228,7 @@ func release(source string, destination string, output string, ruleSetOutput str
 				DefaultOptions: headlessRule,
 			},
 		}
-		srsPath, _ := filepath.Abs(filepath.Join(ruleSetOutput, "geoip-"+countryCode+".srs"))
+		srsPath, _ := filepath.Abs(filepath.Join(ruleSetOutput, countryCode+".srs"))
 		os.Stderr.WriteString("write " + srsPath + "\n")
 		outputRuleSet, err := os.Create(srsPath)
 		if err != nil {
@@ -241,7 +241,7 @@ func release(source string, destination string, output string, ruleSetOutput str
 		}
 		outputRuleSet.Close()
 
-		srsPath, _ = filepath.Abs(filepath.Join(ruleSetOutput, "geoip-"+countryCode+".json"))
+		srsPath, _ = filepath.Abs(filepath.Join(ruleSetOutput, countryCode+".json"))
 		os.Stderr.WriteString("write " + srsPath + "\n")
 		outputRuleSet, err = os.Create(srsPath)
 		if err != nil {

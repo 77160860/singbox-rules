@@ -309,7 +309,7 @@ func main() {
 		"77160860/sing-geosite",
 		"geosite.db",
 		"geosite-cn.db",
-		"rule-set",
+		"geosite",
 	)
 	if err != nil {
 		log.Fatal(err)

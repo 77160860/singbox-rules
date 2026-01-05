@@ -250,7 +250,13 @@ func release(source string, destination string, output string, ruleSetOutput str
 		je := json.NewEncoder(outputRuleSet)
 		je.SetEscapeHTML(false)
 		je.SetIndent("", "    ")
-		err = je.Encode(plainRuleSet)
+		err = je.Encode(struct {
+			Version int                   `json:"version"`
+			Rules   []option.HeadlessRule `json:"rules"`
+		}{
+			Version: 3,
+			Rules:   plainRuleSet.Rules,
+		})
 		if err != nil {
 			outputRuleSet.Close()
 			return err

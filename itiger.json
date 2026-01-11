@@ -1,0 +1,19 @@
+{
+    "version": 3,
+    "rules": [
+        {
+            "domain": [
+                "itiger.com",
+                "itigergrowth.com",
+                "itigergrowtha.com",
+                "itigerup.com"
+            ],
+            "domain_suffix": [
+                ".itiger.com",
+                ".itigergrowth.com",
+                ".itigergrowtha.com",
+                ".itigerup.com"
+            ]
+        }
+    ]
+}
